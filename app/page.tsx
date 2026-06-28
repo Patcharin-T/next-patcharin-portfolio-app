@@ -1,65 +1,79 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-slate-950 text-white">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+          {/* Left Content */}
+          <div>
+
+            <span className="inline-block px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-sm">
+              Front-End Developer Portfolio
+            </span>
+
+            <h1 className="mt-6 text-5xl lg:text-7xl font-bold leading-tight">
+              Hi, I am
+              <span className="block text-blue-400">
+                Patcharin Thonglam
+              </span>
+            </h1>
+
+            <h2 className="mt-4 text-2xl text-gray-300">
+              Digital Technology and Innovation Student
+            </h2>
+
+            <p className="mt-8 text-lg text-gray-400 leading-8 max-w-xl">
+              Passionate about building modern web applications
+              with React and Next.js. I enjoy creating clean,
+              responsive, and user-friendly interfaces while
+              continuously learning new technologies.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-10">
+
+              <Link href="/about">
+                <button className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 transition font-semibold">
+                  About Me
+                </button>
+              </Link>
+
+              <Link href="/me/projects">
+                <button className="px-8 py-4 rounded-xl border border-gray-700 hover:border-blue-500 hover:text-blue-400 transition">
+                  View Projects
+                </button>
+              </Link>
+
+            </div>
+
+          </div>
+
+          {/* Right Content */}
+          <div className="flex justify-center">
+
+            <div className="relative">
+
+              <div className="absolute inset-0 bg-blue-600 blur-3xl opacity-20 rounded-full"></div>
+
+              <Image
+                src="/profile.jpg"
+                alt="Patcharin Profile"
+                width={380}
+                height={380}
+                priority
+                className="relative rounded-3xl border border-slate-700 shadow-2xl object-cover"
+              />
+
+            </div>
+
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+      </section>
+    </main>
   );
 }
